@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("继续"):
 	
 		if sentences_1.is_empty():
-			get_tree().change_scene_to_file("res://剧情场景/dialogue_system_2.tscn")
+			get_tree().change_scene_to_file("res://场景/世界/world2.tscn")
 		else:
 			proceed()
 

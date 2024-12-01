@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl1ge8sd6vsou"]
+
+[ext_resource type="Texture2D" uid="uid://bh81dhmgi46d4" path="res://素材/正式美术素材/1阶段墙壁.png" id="1_2d2gt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wo38"]
+size = Vector2(290, 2160)
+
+[node name="Wall_1" type="StaticBody2D"]
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2d2gt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.53674e-06, 3.8147e-05)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_5wo38")

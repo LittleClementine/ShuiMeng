@@ -17,7 +17,7 @@ func hook_button_sound():
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://剧情场景/dialogue_system_1.tscn")
+	get_tree().change_scene_to_file("res://场景/世界/world1.tscn")
 	pass # Replace with function body.
 
 

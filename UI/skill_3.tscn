@@ -11,6 +11,7 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_er07e")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 140.0
 offset_top = 900.0
 offset_right = 308.0
