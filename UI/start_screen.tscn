@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://tn0byx0du1gs"]
+[gd_scene load_steps=7 format=3 uid="uid://tn0byx0du1gs"]
 
 [ext_resource type="Script" path="res://UI/start_screen.gd" id="1_ojd2c"]
-[ext_resource type="Texture2D" uid="uid://dype4bq14slxf" path="res://素材/草稿美术素材/title.png" id="1_yw0v7"]
-[ext_resource type="Theme" path="res://UI/main_theme.tres" id="2_yil8d"]
+[ext_resource type="Texture2D" uid="uid://dpe4m6fvtjb0e" path="res://素材/正式美术素材/2阶段背景.png" id="2_20wa8"]
+[ext_resource type="Texture2D" uid="uid://d17maqwf3qo56" path="res://素材/正式美术素材/玩家坠落.png" id="3_qi5cq"]
+[ext_resource type="Texture2D" uid="uid://ypdoa0jposkb" path="res://素材/正式美术素材/玩家开启技能1.png" id="4_0egvd"]
 [ext_resource type="AudioStream" uid="uid://b087aq8iou4hp" path="res://素材/音频/剧情对话-点击.wav" id="4_oxayb"]
+[ext_resource type="FontFile" uid="uid://bcklce3psavkr" path="res://素材/字体/凤凰点阵体/VonwaonBitmap-16px.ttf" id="5_6nuas"]
 
 [node name="TitleScreen" type="Control" node_paths=PackedStringArray("click_sound")]
 layout_mode = 3
@@ -15,7 +17,36 @@ grow_vertical = 2
 script = ExtResource("1_ojd2c")
 click_sound = NodePath("clicksound")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1279.0
+offset_bottom = 719.0
+scale = Vector2(0.3, 0.3)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("2_20wa8")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 75.0
+offset_right = 248.0
+offset_bottom = 381.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_qi5cq")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 75.0
+offset_right = 809.0
+offset_bottom = 564.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_0egvd")
+
+[node name="VBoxContainer" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,24 +54,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+offset_left = 73.0
+offset_top = 47.0
+offset_right = 233.0
+offset_bottom = 63.0
+scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
-size_flags_vertical = 6
-texture = ExtResource("1_yw0v7")
+theme_override_fonts/font = ExtResource("5_6nuas")
+text = "No!NoMore Nightmares"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+offset_left = 169.0
+offset_top = 109.0
+offset_right = 209.0
+offset_bottom = 161.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme = ExtResource("2_yil8d")
 
 [node name="StratButton" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6nuas")
 text = "开始"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6nuas")
 text = "退出"
 
 [node name="clicksound" type="AudioStreamPlayer" parent="."]
